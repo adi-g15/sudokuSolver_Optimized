@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include "stddef.h"
 
 template<typename T, typename indexType = size_t>
 struct box{
@@ -12,12 +13,12 @@ struct box{
         // _coord coordinate;
 
     public:
-        box() 
+        box()
             // coordinate({currIndex/(row+1), currIndex%(col+1)}),
             {
                 // ++currIndex;
         }
-        // box(const T& val, const _coord& coord = {currIndex/row, currIndex%row}): 
+        // box(const T& val, const _coord& coord = {currIndex/row, currIndex%row}):
         box(const T& val):
             value(val)
             {
