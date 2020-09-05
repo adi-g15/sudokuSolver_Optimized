@@ -3,6 +3,7 @@
 #include <set>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 inline namespace util{
     /*NOTE - Read respective details about the function and what it does in respective function definitions*/
