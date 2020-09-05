@@ -1,4 +1,7 @@
 # An Optimized Sudoku Solver
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd961189988f49518f0ba9a0e60d2b6b)](https://app.codacy.com/manual/AdityaGupta150/sudokuSolver_Optimized?utm_source=github.com&utm_medium=referral&utm_content=AdityaGupta150/sudokuSolver_Optimized&utm_campaign=Badge_Grade_Dashboard)
+
 ![CMake](https://github.com/AdityaGupta150/sudokuSolver_Optimized/workflows/CMake/badge.svg)
 ![Build Status](https://travis-ci.com/AdityaGupta150/sudokuSolver_Optimized.svg?branch=master)
 
