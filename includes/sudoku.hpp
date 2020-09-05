@@ -19,13 +19,14 @@ class sudoku{
         enum{
             EMPTY = 0U,
         };
-        // sudoku() : board(sudokuGenerator()){}    //initialize with a sample board
+        sudoku(){};
         sudoku(const _board_9x9_& inputBoard) : board(inputBoard){
             if(!this->isValid())
                 throw std::invalid_argument("ERROR: Sudoku board passed is invalid!");
         }
 
         void solve();
+        void setBoard(const _board_9x9_& board);
         bool isValid() const{ return this->isValid(this->board); }
         bool isValid(const _board_9x9_&) const;
         bool backTrackSolve();

@@ -1,4 +1,8 @@
 {
+
+    /*VS Code tasks.json schema reference states that:
+        _CMake projectsa do not use this file because all the build commands are specified in CMakeLists.txt_
+        But here, I am leaving both to the preference of user, tasks.json is also tuned to work well :D */
     "version": "2.0.0",
     "tasks": [
         {
@@ -6,17 +10,18 @@
             "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
-                "/Zi",
+                "/Zi",   // comment this for release versions, and uncomment the /O1
+                // "/O1",
                 "/EHsc",
                 "/I${workspaceFolder}\\includes",
                 "/Fe:",
-                "${workspaceFolder}\\sudoku.exe",
+                "${workspaceFolder}\\sudokuSolver.exe",
                 "${workspaceFolder}\\main.cpp",
                 // "${workspaceFolder}\\src\\main.cpp",
                 "${workspaceFolder}\\src\\*.cpp",
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${workspaceFolder}/build"
             },
             "problemMatcher": [
                 "$msCompile"

@@ -10,6 +10,13 @@
 #include <thread>
 #include <mutex>
 
+void sudoku::setBoard(const _board_9x9_& board){
+    if( !this->isValid(board) )
+        throw std::invalid_argument("ERROR: Board passed is invalid... please recheck");
+
+    this->board = board;
+}
+
 void sudoku::solve()
 {
     if (!this->isValid())
