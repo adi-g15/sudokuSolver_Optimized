@@ -1,5 +1,7 @@
 # An Optimized Sudoku Solver
+
 ![CMake](https://github.com/AdityaGupta150/sudokuSolver_Optimized/workflows/CMake/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/dc277bc3620144ac9979b903cd873554)](https://www.codacy.com/manual/AdityaGupta150/sudokuSolver_Optimized?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AdityaGupta150/sudokuSolver_Optimized&amp;utm_campaign=Badge_Grade)
 ![Build Status](https://travis-ci.com/AdityaGupta150/sudokuSolver_Optimized.svg?branch=master)
 
 An optimised backtracking sudoku solver, that only iterates for the narrowed down possibilities, includes usual unoptimized backtracking too

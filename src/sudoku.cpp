@@ -172,9 +172,8 @@ void sudoku::optimize()
             if (this->board[i][j].value != EMPTY)
                 continue;
 
-            m.lock();
+            std::lock_guard<std::mutex> lock(m);
             this->_possibilities[i][j] = tmpPossible;
-            m.unlock();
             // for (ushort j2 = 0; j2 < 9; ++j2) //columnwise       //WORKS, but expensive, iterates through the column for all empty element positions, better iterate column once, and erase the common elements from each element in column
             // {
             //     this->_possibilities[i][j].erase(this->board[j2][j].value);
@@ -324,7 +323,8 @@ void sudoku::printSVG(std::string parentDir) const
     svgHead << fin.rdbuf();
 
     std::ofstream fout(parentDir + "sudoku.svg");
-    fout << svgHead.rdbuf();
+    if(fout.is_open())
+        fout << svgHead.rdbuf();
 
     for (ushort i = 0; i < 9; ++i)
     {
@@ -335,13 +335,15 @@ void sudoku::printSVG(std::string parentDir) const
                 // std::ostringstream s;
                 // s.str(std::string("<text x=\"" + std::to_string((50*j) + 16) + "\" y=\"" + std::to_string((50*i) + 35) + "\" style=\"font-weight:bold\" font-size=\"30px\">" + std::to_string(this->board[i][j].value) + "</text>\n"));
 
-                fout << "<text x=\"" << (50 * j) + 16 << "\" y=\"" << (50 * i) + 35 << "\" style=\"font-weight:bold\" font-size=\"30px\">" << this->board[i][j].value << "</text>\n";
+                if(fout.is_open())
+                    fout << "<text x=\"" << (50 * j) + 16 << "\" y=\"" << (50 * i) + 35 << "\" style=\"font-weight:bold\" font-size=\"30px\">" << this->board[i][j].value << "</text>\n";
                 // fout<<s.rdbuf();
             }
         }
     }
 
-    fout << "</svg>";
+    if (fout.is_open())
+        fout << "</svg>";
 }
 
 void sudoku::printPossibilities() const

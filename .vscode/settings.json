@@ -79,5 +79,6 @@
         "activityBar.background": "#56142C",
         "titleBar.activeBackground": "#781C3E",
         "titleBar.activeForeground": "#FEFBFC"
-    }, //accepting suggestions using enter turned off
+    },
+    "deepcode.uploadApproved": true //accepting suggestions using enter turned off
 }

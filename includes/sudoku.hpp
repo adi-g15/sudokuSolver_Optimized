@@ -20,7 +20,7 @@ class sudoku{
             EMPTY = 0U,
         };
         sudoku(){};
-        sudoku(const _board_9x9_& inputBoard) : board(inputBoard){
+        explicit sudoku(const _board_9x9_& inputBoard) : board(inputBoard){
             if(!this->isValid())
                 throw std::invalid_argument("ERROR: Sudoku board passed is invalid!");
         }
