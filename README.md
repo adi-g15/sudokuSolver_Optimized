@@ -21,9 +21,9 @@ Two Ways ->
     ``` sh
     cd build
     cmake ..
-    cl *.obj /Fe: sudokuSolver.exe
     ```
-    \* You can also use the .sln file created
+
+    Then use the .sln solution file to get executable
 
     <br>
 
@@ -39,7 +39,6 @@ Two Ways ->
     ```
 
     This will provide you with an executable named `sudokuSolver`, on a successful build 👍
-
 
 _Fun Fact - This time i have more build methods for Windows, not Linux... quite rare_ 😅
 

@@ -70,5 +70,7 @@ int main(int argc, char const *argv[])
     board.print();
     board.printSVG();
 
+    std::cin.ignore();   //to have the window display for some time, remove if not required
+
     return 0;
 }
