@@ -1,4 +1,6 @@
 # An Optimized Sudoku Solver
+![CMake](https://github.com/AdityaGupta150/sudokuSolver_Optimized/workflows/CMake/badge.svg)
+![Build Status](https://travis-ci.com/AdityaGupta150/sudokuSolver_Optimized.svg?branch=master)
 
 An optimised backtracking sudoku solver, that only iterates for the narrowed down possibilities, includes usual unoptimized backtracking too
 
@@ -21,9 +23,10 @@ Two Ways ->
     ``` sh
     cd build
     cmake ..
+    cmake --build .
     ```
 
-    Then use the .sln solution file to get executable
+    \* Or open the .sln solution file using visual studio then get executable
 
     <br>
 
@@ -31,11 +34,12 @@ Two Ways ->
 
 ### Linux
 
-* Using CMAKE -
+* Using CMAKE and makefiles-
 
     ```sh
     cd build
     cmake ..
+    make .
     ```
 
     This will provide you with an executable named `sudokuSolver`, on a successful build 👍
