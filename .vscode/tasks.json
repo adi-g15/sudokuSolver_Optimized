@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: cl.exe build active file",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/I${workspaceFolder}\\includes",
+                "/Fe:",
+                "${workspaceFolder}\\sudoku.exe",
+                "${workspaceFolder}\\main.cpp",
+                // "${workspaceFolder}\\src\\main.cpp",
+                "${workspaceFolder}\\src\\*.cpp",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
