@@ -7,6 +7,10 @@ add_executable(sudokuSolver main.cpp ${SOURCES})
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(my_app PRIVATE Threads::Threads)
+
 target_include_directories(sudokuSolver PRIVATE includes)
 
 include(CPack)
