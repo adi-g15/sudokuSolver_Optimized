@@ -14,6 +14,7 @@
                 // "/O1",
                 "/EHsc",
                 "/I${workspaceFolder}\\includes",
+                "/I${workspaceFolder}",
                 "/Fe:",
                 "${workspaceFolder}\\sudokuSolver.exe",
                 "${workspaceFolder}\\main.cpp",

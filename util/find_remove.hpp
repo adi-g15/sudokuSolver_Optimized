@@ -5,10 +5,11 @@
 #include <list>
 #include <algorithm>
 
-inline namespace util{
+inline namespace util
+{
     /*NOTE - Read respective details about the function and what it does in respective function definitions*/
 
-        /*CAUTION - Unless a container argument is `const`, the algorithm will be MODIFIED*/
+    /*CAUTION - Unless a container argument is `const`, the algorithm will be MODIFIED*/
     // template <typename T>
     // inline size_t remove_common(std::_Tree<T> &container, const std::_Tree<T> &duplicateValues);
     // template <typename T>
@@ -26,7 +27,7 @@ inline namespace util{
     template <typename T>
     inline bool contains(const std::set<T> &C, const T &val) //for sets, maps
     {
-            /*
+        /*
         @note- std::_Tree is the parent class for std::set, std::multiset, std::unordered_set, std::map, std::multimap, std::unordered_map
         @brief- Returns whether an element exists in a given container
 
@@ -43,12 +44,13 @@ inline namespace util{
     inline bool contains(const std::vector<T> &C, const T &val);
     template <typename T>
     inline bool contains(const std::list<T> &C, const T &val);
-        //contains... for < C++20
+    //contains... for < C++20
 
 } // namespace util
 
-template<typename T>
-size_t util::remove_common(std::set<T>& container, const std::set<T>& duplicateValues){
+template <typename T>
+size_t util::remove_common(std::set<T> &container, const std::set<T> &duplicateValues)
+{
     /*@brief - Removes all common elements between 2 sets passed... FROM THE ORIGINAL SET (Notice the const in the 2nd set, we won't modify it)
 
     @params - container -> the set from which to remove the common elements
@@ -66,8 +68,8 @@ size_t util::remove_common(std::set<T>& container, const std::set<T>& duplicateV
     */
 
     size_t removedCount = 0U;
-    for (auto &val : duplicateValues) //remove common elements
-        removedCount += container.erase(val);    //_Tree::erase() returns number of elements removed
+    for (auto &val : duplicateValues)         //remove common elements
+        removedCount += container.erase(val); //_Tree::erase() returns number of elements removed
 
     return removedCount;
 }
@@ -81,7 +83,7 @@ size_t util::take_common(std::set<T> &container, const std::set<T> &duplicateVal
     @note - for details refer util::remove_common() definition
     */
 
-   return util::remove_distinct(container, duplicateValues);
+    return util::remove_distinct(container, duplicateValues);
 }
 
 template <typename T>
@@ -106,15 +108,16 @@ size_t util::remove_distinct(std::set<T> &container, const std::set<T> &duplicat
 
     //CAUTION - @TODO Check if iterator invalidation may happen when we erase elements from a tree during for range loop
     size_t removedCount = 0U;
-    for (auto &&val : container)        //remove distinct elements
-        if( !util::contains(duplicateValues, val) )
+    for (auto &&val : container) //remove distinct elements
+        if (!util::contains(duplicateValues, val))
             removedCount += container.erase(val); //_Tree::erase() returns number of elements removed
 
     return removedCount;
 }
 
 template <typename T>
-bool util::contains(const std::vector<T> &C, const T& val){
+bool util::contains(const std::vector<T> &C, const T &val)
+{
     /*
     @brief- Returns whether an element exists in a given container
 
@@ -126,7 +129,8 @@ bool util::contains(const std::vector<T> &C, const T& val){
 }
 
 template <typename T>
-bool util::contains(const std::list<T> &C, const T &val){
+bool util::contains(const std::list<T> &C, const T &val)
+{
     /*
     @brief- Returns whether an element exists in a given container
 

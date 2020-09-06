@@ -12,5 +12,6 @@ find_package(Threads REQUIRED)
 target_link_libraries(sudokuSolver PRIVATE Threads::Threads)
 
 target_include_directories(sudokuSolver PRIVATE includes)
+target_include_directories(sudokuSolver PRIVATE .)
 
 include(CPack)

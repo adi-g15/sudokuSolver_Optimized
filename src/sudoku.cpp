@@ -1,5 +1,5 @@
 #include "sudoku.hpp"
-#include "util.hpp"
+#include "util/find_remove.hpp"
 
 #include <iostream>
 #include <utility>
