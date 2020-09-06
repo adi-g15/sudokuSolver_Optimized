@@ -1,5 +1,5 @@
 #include "sudoku.hpp"
-#include "timer.hpp"
+#include "util/timer.hpp"
 
 #include <iostream>
 #include <array>
