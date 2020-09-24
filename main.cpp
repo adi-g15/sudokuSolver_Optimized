@@ -59,14 +59,19 @@ int main(int argc, char const *argv[])
         break;
     }
 
-    timer t;    //for timing the code, you can simply remove it
-    t.start();
 
     board.print();
-    board.optimize(); //optimise the board, just comment this if you want UNOPTIMISED
+    util::timer t;    //for timing the code, you can simply remove it
+    t.start();
+    {
+        std::clog << "Optimize: ";
+        util::scopetimer st;
+        board.optimize(); //optimise the board, just comment this if you want UNOPTIMISED
+        std::clog << "Done\n";
+    }
     board.solve();
-
     t.stop();
+
     board.print();
     board.printSVG();
 
