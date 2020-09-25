@@ -7,11 +7,10 @@
 namespace util
 {
     struct timer;
-
-    inline void pause(float sec);
+    struct scopetimer;
 } // namespace util
 
-//DEFINTIONS
+//DEFINITIONS
 struct util::timer
 {
     std::chrono::high_resolution_clock::time_point begin;
@@ -29,7 +28,18 @@ public:
     }
 };
 
-void util::pause(float seconds)
+struct util::scopetimer
 {
-    std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long>(seconds * 1000)));
-}
+    std::chrono::high_resolution_clock::time_point begin;
+
+public:
+    scopetimer() : begin(std::chrono::high_resolution_clock::now())
+    {
+    }
+
+    ~scopetimer()
+    {
+        int64_t dur = (std::chrono::high_resolution_clock::now() - this->begin).count();
+        std::clog << "Took " << dur << " nanoseconds\n";
+    }
+};
